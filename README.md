@@ -1,8 +1,6 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Тестовое задание o_complex
 
-## Getting Started
-
-First, run the development server:
+Запустите dev-server:
 
 ```bash
 npm run dev
@@ -14,23 +12,31 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Откройте [http://localhost:3000](http://localhost:3000) в вашем браузере
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Описание задания и реализация
+Подробное описание задания и ТЗ к нему можно посмотреть [здесь](https://nubersss.notion.site/React-Developer-Next-js-09c47b36c56447329399c044831c7ef9)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+По функционалу:
+- реализована подгрузка страниц по скроллу
+- адаптив
+- маска для ввода телефона в инпуте
+- валидация формы
+- пуш-уведомления о добавлении товара в корзину
+- пуш-уведомления об успешной/не успешной отправке заказа
+- при нажатии на кнопку "купить", она меняется на кнопки + и - и поле для ввода кол-ва товара, значение поля 1, согласно ТЗ
+- предусмотрена реализация случаев xss атаки через контент отзывов
+- в основе тестового задания лежит FSD-архитектура *(в быстром и грубоватом исполнении)*
 
-## Learn More
+## Какие инструменты использовал при выполнении
 
-To learn more about Next.js, take a look at the following resources:
+- [Next.js](https://nextjs.org/docs)
+- [Typescript](https://www.typescriptlang.org/)
+- [Tailwind](https://tailwindcss.com/) - стилизация
+- [useContext, localStorage](#) - работа со стором корзины + работа с локальным стором для номера телефона и товаров в корзине
+- [isomorphic-dompurify](https://www.npmjs.com/package/isomorphic-dompurify) - предоствращение XSS-атак
+- [tanstack-query](https://tanstack.com/) - работа с запросами, в частности fetch по скроллу (infiniteScroll)
+- [react-hook-form](https://react-hook-form.com/) - работа с формами, кастомная валидация
+- [react-hot-toast](https://react-hot-toast.com/) - пуш-оповещения
+- [react-number-format](https://www.npmjs.com/package/react-number-format) - маска для телефона
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

@@ -7,6 +7,7 @@ import { afterSuccessCheckout, getOrder, validatePhoneNumber } from "../lib";
 import { FieldError, MyButton } from "@/components/shared/ui";
 import { useCart } from "@/components/shared/providers";
 import { checkoutProducts } from "@/components/shared/api";
+import toast from "react-hot-toast";
 
 type Input = {
   tel: string;
@@ -36,7 +37,9 @@ export const CheckoutForm = () => {
     const res = await checkoutProducts(checkoutOrder);
     if (res.success) {
       afterSuccessCheckout(setCart);
+      return;
     }
+    toast.error('Произошла ошибка при отправке вашего заказа!')
   };
 
   return (
